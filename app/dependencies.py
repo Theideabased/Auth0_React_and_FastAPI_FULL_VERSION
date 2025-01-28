@@ -22,7 +22,7 @@ def verify_token(token: str = Depends(oauth2_scheme)):
             audience=settings.AUTH0_API_AUDIENCE,
             issuer=f"https://{settings.AUTH0_DOMAIN}/",
         )
-        return decoded_token
+        return token # decoded_token
     except JWTError as e:
         raise HTTPException(
             status_code=401,
