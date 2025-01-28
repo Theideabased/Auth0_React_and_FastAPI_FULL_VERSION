@@ -21,8 +21,10 @@ const Callback = () => {
           throw new Error("No authorization code found");
         }
 
+        const redirectUri = `${window.location.origin}/callback`;
+
         // Send the code to the backend to exchange it for tokens
-        const response = await axios.post("http://localhost:8000/auth/callback", { code });
+        const response = await axios.post(`http://localhost:8000/auth/callback?redirect_uri=${encodeURIComponent(redirectUri)}`, { code });
 
         if (response.status !== 200) {
           throw new Error("Failed to exchange code for tokens");

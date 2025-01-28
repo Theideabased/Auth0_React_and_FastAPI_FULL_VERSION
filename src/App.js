@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import ErrorPage from "./pages/ErrorPage";
 import LoginButton from "./pages/LoginButton";
 import LogoutButton from "./pages/LogoutButton";
+import SignupButton from "./pages/SignupButton";
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
             <li>
               <LoginButton />
             </li>
+            <li>
+              <SignupButton />
+              </li>
             <li>
               <LogoutButton />
             </li>
